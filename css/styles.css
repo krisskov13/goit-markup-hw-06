@@ -48,14 +48,14 @@ body {
 /* Tablet screen */
 @media screen and (min-width:768px) {
     .container {
-        max-width: 736px;
+        max-width: 768px;
     }
 }
 
 /* Desktop screen */
 @media screen and (min-width:1158px) {
     .container {
-        max-width: 1128px;
+        max-width: 1158px;
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -81,9 +81,22 @@ body {
 /* HEADER*/
 .header {
     padding-top: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #E7E9FC;
-    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+    padding-bottom: 22px;
+}
+@media only screen and (min-width: 1158px) {
+.header {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #E7E9FC;
+        box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+    }
+  }
+
+@media only screen and (min-width: 768px) {
+.header{
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 }
 
 .header-container {
@@ -111,7 +124,6 @@ align-items: center;
     text-transform: uppercase;
     letter-spacing: 0.03em;
 }
-
 
 .header-list {
     display: flex;
@@ -149,16 +161,18 @@ align-items: center;
     }
 }
 
-
 @media only screen and (max-width: 768px) {
     .header-contacts {
-    display: none;
+    display: none
   }
 }
 
-.list-contacts:not(:last-child) {
-    margin-right: 40px;
+@media only screen and (min-width: 1158px) {
+    .list-contacts:not(:last-child) {
+        margin-right: 40px;
+  }
 }
+
 .contacts {
     color: var(--body-color);
     font-family: 'Roboto', sans-serif;
@@ -181,11 +195,17 @@ align-items: center;
     content: '';
     position: absolute;
     left: 0;
-    bottom: -1px;
+    bottom: -7px;
     height: 4px;
     width: 100%;
     background-color: #404bbf;
     border-radius: 2px;
+}
+
+@media only screen and (min-width: 1158px) {
+    .current:after{
+    bottom: 4px;
+  }
 }
  @media only screen and (max-width: 768px) {
     .header-menu-button {
@@ -421,6 +441,7 @@ background-color: var(--portfolio-color);
 .list-worker {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 72px;
 }
 
@@ -439,8 +460,6 @@ background-color: var(--portfolio-color);
 }
 
 .list-team {
-    margin-left: auto;
-    margin-right: auto;
     background-color: var(--white-color);
     width: 264px;
     border-radius: 0px 0px 4px 4px;
@@ -526,7 +545,9 @@ background-color: var(--portfolio-color);
 
 .customers-list {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     column-gap: 16px;
     row-gap: 72px;
 }
@@ -586,27 +607,40 @@ background-color: var(--portfolio-color);
  }
  
 .footer-container {
-    display: block;
-    margin: auto;
-    }
-
- @media only screen and (min-width: 768px) {
- .footer-container {
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 72px 24px;
+        max-width: 584px;
     } 
  }
 
- .logo-text-footer {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 72px;
+ @media only screen and (min-width: 1158px) {
+    .footer-container {
+    display: flex;
+    align-items: normal;
+    gap: 0 0;
+    max-width: 1124px;
+    flex-wrap: nowrap;
+   }
  }
+
+.logo-text-footer {
+    margin-bottom: 72px;
+}
  
  @media only screen and (min-width: 768px) {
      .logo-text-footer {
         display: inline-block;
-        margin-right: 24px;
         margin-bottom: 0;
      }
     }
@@ -627,8 +661,14 @@ background-color: var(--portfolio-color);
     line-height: 1.17;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-
 }
+
+@media only screen and (max-width: 428px) {
+    .logo-footer {
+    text-align: center;
+  }
+}
+
  .text-footer {
     display: block;
     width: 264px;
@@ -641,10 +681,10 @@ background-color: var(--portfolio-color);
     color: var(--portfolio-color);
  }
 
+
  .icons-text-footer {
     margin-bottom: 72px;
  }
-
 @media only screen and (min-width: 1158px) {
    .icons-text-footer {
         display: inline-block;
@@ -660,6 +700,12 @@ background-color: var(--portfolio-color);
     letter-spacing: 0.02em;
     margin-bottom: 16px;
     color: var(--white-color);
+ }
+
+ @media only screen and (max-width: 428px) {
+    .media-text-footer {
+     text-align: center;
+   }
  }
 
  .list-networks {
@@ -700,12 +746,9 @@ textarea {
     font-family: inherit;
 }
 
-    .container-footer-input {
-    display: block;
-  }
-
 
 .text-form-footer {
+    display: block;
     margin-bottom: 16px;
     font-weight: 500;
     font-size: 16px;
@@ -714,10 +757,20 @@ textarea {
     color: var(--white-color);
 }
 
+@media only screen and (max-width: 428px) {
+    .text-form-footer{
+    text-align: center;
+  }
+}
 
 @media only screen and (min-width: 768px) {
-.form-subscribe {
+    .form-subscribe {
         display: flex;
+        flex-direction: row;
+    }
+}
+@media only screen and (min-width: 1158px) {
+    .form-subscribe {
         gap: 24px;
     }
 }
@@ -734,6 +787,7 @@ textarea {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     color: var(--white-color);
+    width: 398px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -748,7 +802,7 @@ textarea {
 
 
 .form-button-footer {
-    min-width: 165px;
+    width: 165px;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -763,6 +817,13 @@ textarea {
     background-color: var(--nav-color);
     border: none;
     border-radius: 4px;
+}
+
+@media only screen and (max-width: 428px) {
+.form-button-footer{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .icon-helicopter {
@@ -1131,6 +1192,9 @@ textarea {
 
     transform: translateX(100%);
     transition: transform 250ms ease-in-out;
+    padding-top: 80px;
+    padding-bottom: 40px;
+
 }
 
 .menu-container.is-open {
@@ -1148,7 +1212,7 @@ textarea {
     padding: 0;
     margin: 0;
     list-style: none;
-    margin-bottom: 150px;
+    margin-bottom: 90px;
 }
 
 .mobile-menu .link-menu {
@@ -1172,6 +1236,9 @@ textarea {
 
 .add-menu {
     font-style: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .list-header-menu {
