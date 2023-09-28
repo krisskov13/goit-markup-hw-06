@@ -167,6 +167,12 @@ align-items: center;
     }
 }
 
+@media only screen and (min-width: 768px) {
+    .list-contacts:not(:last-child) {
+        margin-bottom: 12px;
+    }
+}
+
 @media only screen and (min-width: 1158px) {
     .list-contacts:not(:last-child) {
         margin-right: 40px;
@@ -176,12 +182,23 @@ align-items: center;
 .contacts {
     color: var(--body-color);
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.2;
     text-decoration: none;
     letter-spacing: 0.02em;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+
+@media only screen and (min-width: 1158px) {
+    .contacts {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+  }
+}
+
 .contacts:hover,
 .contacts:focus {
     color:#404bbf;
@@ -216,14 +233,20 @@ align-items: center;
 /* 1section */
 .section-solutions {
     background-color: var(--secondary-color);
-    padding-top: 188px;
-    padding-bottom: 188px;
+    padding-top: 112px;
+    padding-bottom: 112px;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7),
     rgba(46, 47, 66, 0.7)), url(../images/hero/people-office.jpg);
-    max-width: 1440px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+@media only screen and (min-width: 1158px) {
+.section-solutions {
+    padding-top: 188px;
+    padding-bottom: 188px;
+  }
 }
 
 .main-title {
@@ -622,6 +645,7 @@ align-items: center;
         flex-direction: row;
         gap: 72px 24px;
         max-width: 584px;
+        align-items: baseline;
     } 
  }
 
@@ -686,6 +710,12 @@ align-items: center;
  .icons-text-footer {
     margin-bottom: 72px;
  }
+
+ @media only screen and (min-width: 768px) {
+    .icons-text-footer {
+     margin-bottom: 0;
+   }
+ }
  
 @media only screen and (min-width: 1158px) {
    .icons-text-footer {
@@ -713,7 +743,6 @@ align-items: center;
  .list-networks {
     display: flex;
     gap: 16px;
-
  }
 
  .networks-footer {
@@ -748,7 +777,13 @@ textarea {
     font-family: inherit;
 }
 
-
+@media only screen and (max-width: 428px) {
+    .container-footer-input {
+        max-width: 398px;
+        width: 100%;
+  }
+}
+    
 .text-form-footer {
     display: block;
     margin-bottom: 16px;
@@ -774,7 +809,6 @@ textarea {
 }
 
 .form-input-footer {
-    margin-bottom: 16px;
     height: 40px;
     border: 1px solid #ffffff;
     background-color: transparent;
@@ -785,13 +819,24 @@ textarea {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     color: var(--white-color);
+}
+
+@media only screen and (max-width: 428px) {
+    .form-input-footer {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+    .form-input-footer {
     width: 264px;
+  }
 }
 
 .form-input-footer:placeholder-shown {
     color: var(--white-color);
 }
-
 
 .form-button-footer {
     width: 165px;
@@ -971,12 +1016,18 @@ textarea {
     left: 50%;
     padding: 72px 24px 24px 24px;
     transform: translate(-50%, -50%) scale(1);
-    width: 408px;
+    width: 100%;
     min-height: 584px;
     background-color: #FCFCFC;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media only screen and (min-width: 428px) {
+   .modal {
+    width: 408px;
+  }
 }
 
 .modal-button {
@@ -1094,26 +1145,43 @@ textarea {
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
+    position: relative;
+    cursor: pointer;
+    padding-left: 24px;
+}
+
+.form-checkbox-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
 }
 
 .checkbox {
-    width: 16px;
-    height: 16px;
-    border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
     border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     fill: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
 } 
 
 .form-checkbox-input:checked + .form-checkbox-label .checkbox {
+    opacity: 1;
+    width: 16px;
+    height: 16px;
     background-color: #404bbf;
     border: none;
-    fill: var(--portfolio-color);
 }
 
 .privacy-policy-label {
@@ -1186,6 +1254,9 @@ textarea {
     transition: transform 250ms ease-in-out;
     padding-top: 80px;
     padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
@@ -1204,7 +1275,6 @@ textarea {
     padding: 0;
     margin: 0;
     list-style: none;
-    margin-bottom: 90px;
 }
 
 .mobile-menu .link-menu {
@@ -1240,12 +1310,18 @@ textarea {
 .tel-menu-link {
     color: var(--nav-color);
         font-family: Roboto;
-        font-size: 36px;
+        font-size: 26px;
         font-weight: 700;
         line-height: 1.11;
         letter-spacing: 0.02em;
         text-transform: capitalize;
         margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 428px) {
+    .tel-menu-link {
+    font-size: 36px;
+  }
 }
 
 .email-menu-link {
@@ -1260,5 +1336,21 @@ textarea {
 
 .list-networks-menu {
     display: flex;
-    gap: 56px;
+    justify-content: space-between;
 }
+
+.networks-footer-modal {
+    width: 40px;
+    height: 40px;
+}
+
+.networks-footer-link–modal {
+    width: 100%;
+        height: 100%;
+        background-color: var(--nav-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
