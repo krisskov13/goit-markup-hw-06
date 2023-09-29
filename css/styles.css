@@ -176,6 +176,7 @@ align-items: center;
 @media only screen and (min-width: 1158px) {
     .list-contacts:not(:last-child) {
         margin-right: 40px;
+        margin-bottom: 0;
   }
 }
 
@@ -688,7 +689,7 @@ align-items: center;
     letter-spacing: 0.03em;
 }
 
-@media only screen and (max-width: 428px) {
+@media only screen and (max-width: 767px) {
     .logo-footer {
     text-align: center;
   }
@@ -734,7 +735,7 @@ align-items: center;
     color: var(--white-color);
  }
 
- @media only screen and (max-width: 428px) {
+ @media only screen and (max-width: 767px) {
     .media-text-footer {
      text-align: center;
    }
@@ -777,7 +778,7 @@ textarea {
     font-family: inherit;
 }
 
-@media only screen and (max-width: 428px) {
+@media only screen and (max-width: 767px) {
     .container-footer-input {
         max-width: 398px;
         width: 100%;
@@ -794,7 +795,7 @@ textarea {
     color: var(--white-color);
 }
 
-@media only screen and (max-width: 428px) {
+@media only screen and (max-width: 767px) {
     .text-form-footer{
     text-align: center;
   }
@@ -821,7 +822,7 @@ textarea {
     color: var(--white-color);
 }
 
-@media only screen and (max-width: 428px) {
+@media only screen and (max-width: 767px) {
     .form-input-footer {
     width: 100%;
     margin-bottom: 16px;
@@ -856,7 +857,7 @@ textarea {
     border-radius: 4px;
 }
 
-@media only screen and (max-width: 428px) {
+@media only screen and (max-width: 767px) {
 .form-button-footer{
     margin-left: auto;
     margin-right: auto;
@@ -1138,9 +1139,14 @@ textarea {
 
 .container-checkbox {
     margin-bottom: 24px;
+
+}
+
+.form-checkbox-input {
+    left: 0;
+    top: 0;
 }
 .form-checkbox-label {
-    display: block;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
@@ -1148,6 +1154,7 @@ textarea {
     position: relative;
     cursor: pointer;
     padding-left: 24px;
+    padding-top: 1px;
 }
 
 .form-checkbox-label::before {
